@@ -1,0 +1,27 @@
+<h4>Agregar personaje</h4>
+
+<form action="" (ngSubmit)="emitCharacter()">
+  <!-- Sintaxis Caja de banana xd: [()] es una caja y dos banans dentro hahaha -->
+
+  <!-- Two way data binding permite que la info fluya en dos vias, es decir:
+    que se pueda modificar la info del input desde el component.ts, y viceversa -->
+  <input
+    class="form-control mb-2"
+    [(ngModel)]="character.name"
+    type="text"
+    name="name"
+    placeholder="Nombre del personaje">
+
+  <input
+    class="form-control mb-2"
+    [(ngModel)]="character.power"
+    type="number"
+    name="power"
+    placeholder="Poder">
+
+  <button class="btn btn-primary" type="submit">
+    Agregar
+  </button>
+
+  <pre>{{ character | json }}</pre>
+</form>
